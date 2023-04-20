@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="box">
+        <div class="header">
+            <h1>Atendimento on-line</h1>
+        </div>
+        <div class="content" #messageList>
+            <div class="msg-component" [ngClass]="{'msg-you': message.user  === 'you'}"
+                *ngFor="let message of messages">
+                <div *ngIf="message.user === 'you';" class="msg-user">Você diz:</div>
+                <div *ngIf="message.user === 'robot';" class="msg-user">Robô diz:</div>
+                <div class="msg-content">{{ message.text }}</div>
+            </div>
+        </div>
+        <div class="footer">
+            <form class="form-send" action="index.html" method="post">
+                <input type="text" class="message-text" name="message-text" placeholder="Digite aqui..." #messageInput>
+                <button type="button" class="btn-submit" (click)="sendMessage(messageInput.value)">ENVIAR</button>
+            </form>
+        </div>
+    </div>
+</div>
