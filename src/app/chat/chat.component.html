@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="footer">
-            <form class="form-send" action="index.html" method="post">
+            <form class="form-send" (keydown.enter)=" sendMessage(messageInput.value); $event.preventDefault()">
                 <input type="text" class="message-text" name="message-text" placeholder="Digite aqui..." #messageInput>
                 <button type="button" class="btn-submit" (click)="sendMessage(messageInput.value)">ENVIAR</button>
             </form>

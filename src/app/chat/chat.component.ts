@@ -37,6 +37,7 @@ export class ChatComponent implements AfterViewInit {
     }
 
     this.messages.push({ text: messageText, user: 'you' });
+    this.messageInput.nativeElement.value = '';
     this.scrollToBottom();
 
     setTimeout(() => {
